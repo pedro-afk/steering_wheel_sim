@@ -21,7 +21,6 @@ The result: your favorite PC racing games can be played with nothing more than y
 
 * 📡 Real-time steering input over local Wi-Fi
 * 🎮 Emulates a **virtual racing wheel** using `vJoy`
-* 💻 Cross-platform (mobile app works on Android)
 
 ---
 
@@ -73,3 +72,4 @@ The result: your favorite PC racing games can be played with nothing more than y
 * [ ] Add haptic feedback on oversteering
 * [ ] Add UI calibration panel for sensitivity and deadzone
 * [ ] Add multi-platform gamepad emulation (ViGEm support)
+* [ ] Add iOS support
