@@ -61,8 +61,7 @@ The result: your favorite PC racing games can be played with nothing more than y
 ### 🖥️ PC Setup
 
 1. Install `vJoy` and configure at least 1 axis (X).
-2. Run the Node.js UDP server (`npm run dev`).
-3. Run the Python UDP-to-vJoy bridge (`python vjoy_controller.py`).
+2. Run the Python UDP server + vJoy bridge (`python server.py`).
 
 ---
 
