@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _preferences = await SharedPreferences.getInstance();
       platformEventChannel.receiveBroadcastStream().listen((data) {
         final now = DateTime.now().millisecondsSinceEpoch;
-        final deltaTime = (now - lastTimestamp) / 1500.0;
+        final deltaTime = (now - lastTimestamp) / 2000.0;
         lastTimestamp = now;
 
         double rotationZ = double.parse("${data['gyroscope']['z']}").toDouble();

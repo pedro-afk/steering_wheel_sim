@@ -8,10 +8,10 @@ j.set_axis(pyvjoy.HID_USAGE_X, 16384)
 input("Centro - Pressione Enter para continuar")
  
 j.set_axis(pyvjoy.HID_USAGE_X, 32768)
-input("Direita total - Pressione Enter para continuar")
+input("Direita - Pressione Enter para continuar")
 
 j.set_axis(pyvjoy.HID_USAGE_X, 0)
-input("Esquerda total - Pressione Enter para continuar")
+input("Esquerda - Pressione Enter para continuar")
 
 # Testar os botões 1 e 2
 j.set_button(1, 1)
@@ -19,7 +19,7 @@ input("Botão 1 - Pressione Enter")
 
 j.set_button(1, 0)  
 j.set_button(2, 1)  
-input("Botão 2 ON - Pressione Enter")
+input("Botão 2 - Pressione Enter")
 
 j.set_button(2, 0)
 
