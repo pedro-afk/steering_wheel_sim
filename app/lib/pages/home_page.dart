@@ -31,7 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((call) async {
       _preferences = await SharedPreferences.getInstance();
-      await _repository.init();
       platformEventChannel.receiveBroadcastStream().listen((data) {
         final now = DateTime.now().millisecondsSinceEpoch;
         final deltaTime = (now - lastTimestamp) / 2000.0;

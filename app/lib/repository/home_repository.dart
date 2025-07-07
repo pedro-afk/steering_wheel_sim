@@ -4,7 +4,11 @@ import 'dart:io';
 class HomeRepository {
   late RawDatagramSocket _socket;
 
-  Future<void> init() async {
+  HomeRepository() {
+    _init();
+  }
+
+  Future<void> _init() async {
     _socket = await RawDatagramSocket.bind(InternetAddress.anyIPv4, 0);
   }
 
