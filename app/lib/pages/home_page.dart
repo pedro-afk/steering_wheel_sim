@@ -2,11 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:steering_wheel_sim/repository/home_repository.dart';
-
-const String prefIpKey = "ip";
-const String prefPortKey = "port";
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -24,16 +20,16 @@ class _MyHomePageState extends State<MyHomePage> {
   int brake = 0;
   double angle = 0.0;
   int lastTimestamp = DateTime.now().millisecondsSinceEpoch;
-  late SharedPreferences _preferences;
   final _formKey = GlobalKey<FormState>();
+  String ip = "";
+  String port = "";
 
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((call) async {
-      _preferences = await SharedPreferences.getInstance();
       platformEventChannel.receiveBroadcastStream().listen((data) {
         final now = DateTime.now().millisecondsSinceEpoch;
-        final deltaTime = (now - lastTimestamp) / 2000.0;
+        final deltaTime = (now - lastTimestamp) / 2000;
         lastTimestamp = now;
 
         double rotationZ = double.parse("${data['gyroscope']['z']}").toDouble();
@@ -44,9 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
         angle = angle.clamp(-90.0, 90.0);
 
-        String ip = _preferences.getString(prefIpKey) ?? "";
-        String port = _preferences.getString(prefPortKey) ?? "";
-
         if (ip.isEmpty || port.isEmpty) {
           return;
         }
@@ -56,6 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ip,
           port,
         );
+
+        angle += 0;
       });
     });
 
@@ -141,8 +136,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                         if (!_formKey.currentState!.validate()) {
                                           return;
                                         }
-                                        await _preferences.setString(prefIpKey, _ctrlIp.text);
-                                        await _preferences.setString(prefPortKey, _ctrlPort.text);
+                                        ip = _ctrlIp.text;
+                                        port = _ctrlPort.text;
                                         if (!context.mounted) return;
                                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("IP and PORT saved!")));
                                         Navigator.pop(context);

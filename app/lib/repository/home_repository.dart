@@ -12,7 +12,7 @@ class HomeRepository {
     _socket = await RawDatagramSocket.bind(InternetAddress.anyIPv4, 0);
   }
 
-  Future<void> sendUdpMessage(
+  void sendUdpMessage(
     String message,
     String targetIp,
     String targetPort,

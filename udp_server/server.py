@@ -59,7 +59,7 @@ while True:
         j.set_button(1, throttle)
         j.set_button(2, brake)
 
-        print(f"→ angle: {angle}° → X: {x_val} | throttle: {throttle} | brake: {brake}")
+        # print(f"→ angle: {angle}° → X: {x_val} | throttle: {throttle} | brake: {brake}")
 
     except Exception as e:
         print(f"Falha ao processar mensagem: {e}")
