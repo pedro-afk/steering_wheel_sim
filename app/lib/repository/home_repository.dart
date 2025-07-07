@@ -11,10 +11,10 @@ class HomeRepository {
   Future<void> sendUdpMessage(
     String message,
     String targetIp,
-    int targetPort,
+    String targetPort,
   ) async {
     final data = utf8.encode(message);
-    _socket.send(data, InternetAddress(targetIp), targetPort);
+    _socket.send(data, InternetAddress(targetIp), int.parse(targetPort));
   }
 
   void closeUdp() {
