@@ -35,8 +35,7 @@ def angle_to_vjoy(angle):
 while True:
     data, addr = sock.recvfrom(1024)
     message = data.decode().strip()
-    # print(f"[RECEBIDO] {message} de {addr}")
-
+    
     try:
         parts = message.split("|")
 
@@ -60,7 +59,7 @@ while True:
         j.set_button(1, throttle)
         j.set_button(2, brake)
 
-        # print(f"→ angle: {angle}° → X: {x_val} | throttle: {throttle} | brake: {brake}")
+        print(f"→ angle: {angle}° → X: {x_val} | throttle: {throttle} | brake: {brake}")
 
     except Exception as e:
         print(f"Falha ao processar mensagem: {e}")

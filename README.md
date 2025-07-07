@@ -11,8 +11,7 @@ This project simulates a virtual racing wheel by combining:
 
 * 📲 **Mobile App** (Flutter): Uses the phone's gyroscope to capture steering angle.
 * 🌐 **UDP Communication**: Sends motion data over Wi-Fi to the PC in real time.
-* 🖥️ **Node.js UDP Server**: Receives data from the mobile app.
-* 🧠 **Python + pyvjoy**: Maps the received angle data to a virtual joystick using [vJoy](https://github.com/jshafer817/vJoy).
+* 🧠 **Python UDP Server + pyvjoy**: Receives data from the mobile app and maps the received angle data and buttons to a virtual joystick using [vJoy](https://github.com/jshafer817/vJoy).
 
 The result: your favorite PC racing games can be played with nothing more than your phone and Wi-Fi.
 
@@ -22,9 +21,7 @@ The result: your favorite PC racing games can be played with nothing more than y
 
 * 📡 Real-time steering input over local Wi-Fi
 * 🎮 Emulates a **virtual racing wheel** using `vJoy`
-* 🔧 Adjustable steering sensitivity
-* 💡 Modular architecture (easy to expand with brake/throttle/buttons)
-* 💻 Cross-platform (mobile app works on Android/iOS)
+* 💻 Cross-platform (mobile app works on Android)
 
 ---
 
@@ -33,7 +30,7 @@ The result: your favorite PC racing games can be played with nothing more than y
 | Component               | Tech Stack                                 |
 | ----------------------- | ------------------------------------------ |
 | Mobile App              | Flutter + Platform Chanels + UDP           |
-| Server                  | Node.js (receives sensor data)             |
+| Server                  | Python (receives sensor data)             |
 | Controller Interface    | Python + `pyvjoy` (Windows only)           |
 | Virtual Joystick Driver | [vJoy](https://github.com/jshafer817/vJoy) |
 
@@ -43,10 +40,9 @@ The result: your favorite PC racing games can be played with nothing more than y
 
 1. Phone captures gyroscope rotation around the Z-axis.
 2. Data is streamed via UDP to the PC.
-3. Node.js forwards the data to a local Python service.
-4. Python interprets and normalizes the angle.
-5. The angle is sent to `vJoy`, which emulates a real racing wheel.
-6. Any game that supports a joystick will receive steering input from your phone.
+3. Python server interprets and normalizes the angle.
+4. The angle is sent to `vJoy`, which emulates a real racing wheel.
+5. Any game that supports a joystick will receive steering input from your phone.
 
 ---
 
@@ -56,7 +52,6 @@ The result: your favorite PC racing games can be played with nothing more than y
 
 * Windows PC
 * Python 3
-* Node.js
 * [vJoy installed](https://github.com/jshafer817/vJoy/releases)
 
 ### 📲 Mobile App
