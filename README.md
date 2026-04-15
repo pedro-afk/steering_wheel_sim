@@ -1,7 +1,7 @@
 # 📱🕹️ Mobile Steering Wheel Simulator
 
 Transform your smartphone into a **wireless racing wheel** to control PC games using real-time motion data.
-This project allows you to tilt and rotate your phone like a physical steering wheel and control racing games on your Windows machine — **no physical joystick required**.
+This project allows you to tilt and rotate your phone like a physical steering wheel and control racing games on your Windows machine **no physical joystick required**.
 
 ---
 
@@ -14,6 +14,8 @@ This project simulates a virtual racing wheel by combining:
 * 🧠 **Python UDP Server + pyvjoy**: Receives data from the mobile app and maps the received angle data and buttons to a virtual joystick using [vJoy](https://github.com/jshafer817/vJoy).
 
 The result: your favorite PC racing games can be played with nothing more than your phone and Wi-Fi.
+
+<img width="480" height="848" alt="image" src="https://github.com/user-attachments/assets/91bed5bb-f9af-44c6-b8dc-288dae656e44" />
 
 ---
 
@@ -62,13 +64,3 @@ The result: your favorite PC racing games can be played with nothing more than y
 
 1. Install `vJoy` and configure at least 1 axis (X).
 2. Run the Python UDP server + vJoy bridge (`python server.py`).
-
----
-
-## 🛣️ Roadmap
-
-* [ ] Add throttle and brake via tilt or on-screen controls
-* [ ] Add haptic feedback on oversteering
-* [ ] Add UI calibration panel for sensitivity and deadzone
-* [ ] Add multi-platform gamepad emulation (ViGEm support)
-* [ ] Add iOS support
