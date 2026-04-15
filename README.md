@@ -16,7 +16,7 @@ This project simulates a virtual racing wheel by combining:
 The result: your favorite PC racing games can be played with nothing more than your phone and Wi-Fi.
 
 <video width="480" height="848" controls>
-  <source src="./1751919147421.mp4" type="video/mp4">
+  <source src="https://github.com/pedro-afk/steering_wheel_sim/blob/master/1751919147421.mp4" type="video/mp4">
   Your browser don't support video tags.
 </video>
 
