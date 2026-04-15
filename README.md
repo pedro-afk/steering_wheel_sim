@@ -15,9 +15,7 @@ This project simulates a virtual racing wheel by combining:
 
 The result: your favorite PC racing games can be played with nothing more than your phone and Wi-Fi.
 
-<video width="480" height="848" controls>
-  <source src="https://github.com/user-attachments/assets/37bf3a63-b9f7-4d57-8e6d-92e49ffe99e9" type="video/mp4">
-</video>
+<video src="https://github.com/user-attachments/assets/37bf3a63-b9f7-4d57-8e6d-92e49ffe99e9" width="480" height="848" controls></video>
 
 ---
 
